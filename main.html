@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>LI API Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .form-column {
+            flex: 0 0 45%;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 30;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="/your-api-endpoint" method="POST">
+        <div class="form-container">
+            <div class="form-column">
+                <label class="form-label" for="input1">Address:</label>
+                <input class="form-input" type="text" id="input1" name="input1" required>
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input2">Characteristics:</label>
+                <input class="form-input" type="text" id="input2" name="input2" required>
+            </div>
+        </div>
+        <button type="button" onclick=submitForm()>Submit</button>
+    </form>
+</body>
+    <div id="output"></div>
+    <script>
+        function submitForm() {
+            const input1Value = document.getElementById("input1").value;
+            const input2Value = document.getElementById("input2").value;
+
+            // Replace '/your-api-endpoint' with the actual API endpoint
+            const apiEndpoint = '';
+            const url = `https://api-euw1.rms.com/li/geocode/latest`;
+
+            // const data = {
+            //     input1: input1Value,
+            //     input2: input2Value
+            // };
+
+            const data = {
+                "admin1Code": "CA",
+                "cityName": "NEWARK",
+                "countryCode": "US",
+                "countryScheme": "ISO2A",
+                "postalCode": "94560",
+                "streetAddress": "7575 GATEWAY BLVD"
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'NbJJAhlheCKsoARqzxF4Gl8ky72MKlJ1S2yMsMNcQBY',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Assuming the API returns some data, you can display it in the output div
+                    const outputDiv = document.getElementById("output");
+                    outputDiv.innerHTML = `<p>API Response: ${JSON.stringify(data)}</p>`;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    </script>
+</body>
+</html>
