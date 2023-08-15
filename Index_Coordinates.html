@@ -98,26 +98,18 @@
 <img src="Company Logo.svg" alt="logo" style="height: 50px; float: left;">
 <h1 style="font-size: 40px; margin-left: 30%;">Location Intelligence API Demonstration</h1>
 <div style="text-align: center; justify-content: center; margin: 0 auto; margin-top: -20px;">
-    <a href="main_coordinates.html"> [With Coordinates]</a>
+    <a href="Index.html"> [With Address]</a>
 </div>
 <body>
     <form>
         <div class="form-container">
             <div class="form-column">
-                <label class="form-label" for="input1">Address:</label>
-                <input class="form-input" type="text" id="address" name="input1" required>
+                <label class="form-label" for="input1">Latitude:</label>
+                <input class="form-input" type="text" id="input1" name="input1" required>
             </div>
             <div class="form-column">
-                <label class="form-label" for="input2">Postal Code:</label>
-                <input class="form-input" type="text" id="postalCode" name="input2" required>
-            </div>
-            <div class="form-column">
-                <label class="form-label" for="input3">City Name:</label>
-                <input class="form-input" type="text" id="cityName" name="input3" required>
-            </div>
-            <div class="form-column">
-                <label class="form-label" for="input4">Country Code:</label>
-                <input class="form-input" type="text" id="countryCode" name="input4" required>
+                <label class="form-label" for="input2">Longitude:</label>
+                <input class="form-input" type="text" id="input2" name="input2" required>
             </div>
             <div class="form-column">
                 <label class="form-label" for="input5">Construction Code:</label>
@@ -141,8 +133,8 @@
         </div>
         <body>
             <div class="slider-container">
-                <input type="range" min="0" max="1000000" value="0" class="slider" id="building">
-                <input type="number" min="0" max="1000000" value="0" class="input-value" id="buildingValue">
+                <input type="range" min="1" max="1000000" value="10000" class="slider" id="building">
+                <input type="number" min="1" max="1000000" value="10000" class="input-value" id="buildingValue">
             </div>
         </body>
         <div class="form-container">
@@ -152,8 +144,8 @@
         </div>
         <body>
             <div class="slider-container">
-                <input type="range" min="0" max="1000000" value="10000" class="slider" id="content">
-                <input type="number" min="0" max="1000000" value="10000" class="input-value" id="contentValue">
+                <input type="range" min="1" max="1000000" value="10000" class="slider" id="content">
+                <input type="number" min="1" max="1000000" value="10000" class="input-value" id="contentValue">
             </div>
         </body>
         <div class="form-container">
