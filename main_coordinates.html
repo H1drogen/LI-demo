@@ -6,6 +6,8 @@
             font-family: Arial, sans-serif;
         }
 
+
+
         .form-container {
             display: flex;
             flex-wrap: wrap;
@@ -35,7 +37,7 @@
         .form-submit {
             width: 100%;
             max-width: 300px;
-            padding: 30px;
+            padding: 30;
             background-color: #4CAF50;
             color: #fff;
             border: none;
@@ -98,42 +100,34 @@
 <img src="Company Logo.svg" alt="logo" style="height: 50px; float: left;">
 <h1 style="font-size: 40px; margin-left: 30%;">Location Intelligence API Demonstration</h1>
 <div style="text-align: center; justify-content: center; margin: 0 auto; margin-top: -20px;">
-    <a href="main_coordinates.html"> [With Coordinates]</a>
+    <a href="main.html"> [With Address]</a>
 </div>
 <body>
     <form>
         <div class="form-container">
             <div class="form-column">
-                <label class="form-label" for="input1">Address:</label>
-                <input class="form-input" type="text" id="address" name="input1" required>
+                <label class="form-label" for="input1">Latitude:</label>
+                <input class="form-input" type="text" id="input1" name="input1" required>
             </div>
             <div class="form-column">
-                <label class="form-label" for="input2">Postal Code:</label>
-                <input class="form-input" type="text" id="postalCode" name="input2" required>
-            </div>
-            <div class="form-column">
-                <label class="form-label" for="input3">City Name:</label>
-                <input class="form-input" type="text" id="cityName" name="input3" required>
-            </div>
-            <div class="form-column">
-                <label class="form-label" for="input4">Country Code:</label>
-                <input class="form-input" type="text" id="countryCode" name="input4" required>
+                <label class="form-label" for="input2">Longitude:</label>
+                <input class="form-input" type="text" id="input2" name="input2" required>
             </div>
             <div class="form-column">
                 <label class="form-label" for="input5">Construction Code:</label>
-                <input class="form-input" type="text" id="constructionCode" name="input5">
+                <input class="form-input" type="text" id="input5" name="input5">
             </div>
             <div class="form-column">
                 <label class="form-label" for="input6">Occupancy Code:</label>
-                <input class="form-input" type="text" id="occupancyCode" name="input6">
+                <input class="form-input" type="text" id="input6" name="input6">
             </div>
             <div class="form-column">
                 <label class="form-label" for="input7">Year Built:</label>
-                <input class="form-input" type="text" id="yearBuilt" name="input7">
+                <input class="form-input" type="text" id="input7" name="input7">
             </div>
             <div class="form-column">
                 <label class="form-label" for="input8">Number of Stories:</label>
-                <input class="form-input" type="text" id="numberOfStories" name="input8">
+                <input class="form-input" type="text" id="input8" name="input8">
             </div>
             <div class="form-column">
                 <label class="form-label" for="input8">Building Value:</label>
@@ -158,18 +152,18 @@
         </body>
         <div class="form-container">
             <div class="form-column">
-                <label class="form-label" for="input9">Deductible Type:</label>
-                <input class="form-input" type="text" id="deductibleType" name="input9">
+                <label class="form-label" for="input9">Deductable Type:</label>
+                <input class="form-input" type="text" id="input9" name="input9">
             </div>
             <div class="form-column">
-                <label class="form-label" for="input10">Deductible amount:</label>
-                <input class="form-input" type="text" id="deductibleAmount" name="input10">
+                <label class="form-label" for="input10">Deductable amount (in %):</label>
+                <input class="form-input" type="text" id="input10" name="input10">
             </div>
         </div>
 
         </form>
     
-    <button type="submit" class="form-submit" onclick="submitForm('NbJJAhlheCKsoARqzxF4Gl8ky72MKlJ1S2yMsMNcQBY')">Submit</button>
+    <button type="submit" class="form-submit" onclick=submitForm2()>Submit</button>
     <div class="outputs">
         <div class="container">
             <h2>Geocode API Response Piece</h1>
