@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Buttons with Custom Icons</title>
+    <!-- Add Font Awesome CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Center the buttons container */
+
+        /* Style for the buttons container */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Style for the toggle buttons */
+        .toggle-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 50px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-right: 10px; /* Add some spacing between the buttons */
+        }
+
+        /* Style for the active button */
+        .toggle-btn.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="toggle-btn" id="button1" onclick="toggleButton(1)">WS</button>
+        <button class="toggle-btn" id="button2" onclick="toggleButton(2)">EQ</button>
+    </div>
+
+    <script>
+        // Function to handle button toggling
+        function toggleButton(btnId) {
+            const button1 = document.getElementById('button1');
+            const button2 = document.getElementById('button2');
+
+            // Toggle the active class for the clicked button
+            if (btnId === 1) {
+                button1.classList.add('active');
+                button2.classList.remove('active');
+            } else {
+                button1.classList.remove('active');
+                button2.classList.add('active');
+            }
+
+            // Perform actions based on the selected button
+            if (button1.classList.contains('active')) {
+                console.log('Button 1 is active. Value: 1');
+            } else {
+                console.log('Button 2 is active. Value: 2');
+            }
+        }
+    </script>
+</body>
+</html>

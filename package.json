@@ -1,0 +1,23 @@
+{
+  "name": "li-demo",
+  "version": "1.0.0",
+  "description": "LI-API project",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonRMS/LI-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimonRMS/LI-demo/issues"
+  },
+  "homepage": "https://github.com/SimonRMS/LI-demo#readme",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.391.0",
+    "aws-sdk": "^2.1436.0"
+  }
+}

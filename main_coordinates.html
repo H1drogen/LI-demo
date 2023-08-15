@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>LI API Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .form-column {
+            flex: 0 0 45%;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-submit {
+            width: 100%;
+            max-width: 300px;
+            padding: 30;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 41%;
+        }
+
+        .form-submit:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: medium;
+        }
+
+        .slider-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -20px;
+        }
+
+        .slider {
+            width: 100%;
+            max-width: 400px;
+            margin-right: 10px;
+        }
+
+        .input-value {
+            width: 100px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+    <script src="javascript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<img src="Company Logo.svg" alt="logo" style="height: 50px; float: left;">
+<h1 style="font-size: 40px; margin-left: 30%;">Location Intelligence API Demonstration</h1>
+<div style="text-align: center; justify-content: center; margin: 0 auto; margin-top: -20px;">
+    <a href="index.html"> [With Address]</a>
+</div>
+<body>
+    <form>
+        <div class="form-container">
+            <div class="form-column">
+                <label class="form-label" for="input1">Latitude:</label>
+                <input class="form-input" type="text" id="input1" name="input1" required>
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input2">Longitude:</label>
+                <input class="form-input" type="text" id="input2" name="input2" required>
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input5">Construction Code:</label>
+                <input class="form-input" type="text" id="input5" name="input5">
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input6">Occupancy Code:</label>
+                <input class="form-input" type="text" id="input6" name="input6">
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input7">Year Built:</label>
+                <input class="form-input" type="text" id="input7" name="input7">
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input8">Number of Stories:</label>
+                <input class="form-input" type="text" id="input8" name="input8">
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input8">Building Value:</label>
+            </div>
+        </div>
+        <body>
+            <div class="slider-container">
+                <input type="range" min="0" max="1000000" value="0" class="slider" id="building">
+                <input type="number" min="0" max="1000000" value="0" class="input-value" id="buildingValue">
+            </div>
+        </body>
+        <div class="form-container">
+            <div class="form-column">
+                <label class="form-label" for="input8">Building Content Value:</label>
+            </div>
+        </div>
+        <body>
+            <div class="slider-container">
+                <input type="range" min="0" max="1000000" value="10000" class="slider" id="content">
+                <input type="number" min="0" max="1000000" value="10000" class="input-value" id="contentValue">
+            </div>
+        </body>
+        <div class="form-container">
+            <div class="form-column">
+                <label class="form-label" for="input9">Deductable Type:</label>
+                <input class="form-input" type="text" id="input9" name="input9">
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="input10">Deductable amount (in %):</label>
+                <input class="form-input" type="text" id="input10" name="input10">
+            </div>
+        </div>
+
+        </form>
+    
+    <button type="submit" class="form-submit" onclick=submitForm2()>Submit</button>
+    <div class="outputs">
+        <div class="container">
+            <h2>Geocode API Response Piece</h1>
+            <div id="output"></div>
+        </div>
+        <div class="container">
+            <h2>Location Intelligence</h1>
+            <div id="output2"></div>
+            <div id="output3">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

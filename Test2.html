@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Google Maps API Example</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFDn3VGD4NpYE-PcnDRtJJHyQJiscdR54&callback=initMap"></script>
+</head>
+<body>
+    <h1>Google Maps API Example</h1>
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude">
+    <br>
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude">
+    <br>
+    <button onclick="showMap()">Show Map</button>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+function initMap(latitude, longitude) {
+    const mapOptions = {
+        center: { lat: parseFloat(latitude), lng: parseFloat(longitude) },
+        zoom: 10 // You can adjust the zoom level here
+    };
+
+    const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    const marker = new google.maps.Marker({
+        position: { lat: parseFloat(latitude), lng: parseFloat(longitude) },
+        map: map,
+        title: "Marker"
+    });
+}
+
+// Function to display the map based on input
+function showMap() {
+    const latitude = document.getElementById("latitude").value;
+    const longitude = document.getElementById("longitude").value;
+
+    if (latitude && longitude) {
+        initMap(latitude, longitude);
+    } else {
+        alert("Please enter valid latitude and longitude.");
+    }
+}
+    </script>
+</body>
+</html>
